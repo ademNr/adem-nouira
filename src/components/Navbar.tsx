@@ -58,18 +58,31 @@ export default function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const handleNavClick = (href: string, sectionId: string) => {
-        setIsMobileMenuOpen(false);
-
+    const scrollToSection = (sectionId: string) => {
         if (sectionId === 'hero') {
-            // Scroll to top for hero section
             window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
-            // Smooth scroll to section
             const element = document.getElementById(sectionId);
             if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
+                // Calculate position accounting for navbar height
+                const yOffset = -80;
+                const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({ top: y, behavior: 'smooth' });
             }
+        }
+    };
+
+    const handleNavClick = (href: string, sectionId: string) => {
+        if (isMobileMenuOpen) {
+            // Close menu first before scrolling
+            setIsMobileMenuOpen(false);
+
+            // Wait for menu to close before scrolling
+            setTimeout(() => {
+                scrollToSection(sectionId);
+            }, 300); // Match this duration to your menu animation
+        } else {
+            scrollToSection(sectionId);
         }
     };
 
