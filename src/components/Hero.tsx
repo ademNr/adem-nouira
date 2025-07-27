@@ -130,7 +130,7 @@ export default function Hero() {
                                 transition={{ delay: 0.5 }}
                                 className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-md leading-relaxed"
                             >
-                                 <span className="font-semibold text-orange-500">Software Developer</span> crafting digital experiences that people love to use.
+                                <span className="font-semibold text-orange-500">Software Developer</span> crafting digital experiences that people love to use.
                             </motion.p>
                         </div>
 
