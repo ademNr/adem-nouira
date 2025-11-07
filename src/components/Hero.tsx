@@ -18,7 +18,7 @@ export default function Hero() {
         image: '/project2.jpg',
         color: 'from-blue-400 to-purple-500',
         bgColor: 'bg-black-100',
-        url: 'https://gitforje.vercel.app',
+        url: 'https://gitforje.com',
         completedDate: 'July 2025'
     };
 
