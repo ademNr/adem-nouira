@@ -14,8 +14,8 @@ export default function Navbar() {
     const navItems = [
         { name: 'Discover', href: "#hero", sectionId: 'hero' },
         { name: 'Skills', href: '#skills', sectionId: 'skills' },
-        { name: 'Projects', href: '#projects', sectionId: 'projects' },
-        { name: 'CV', href: '#cv', sectionId: 'cv' }, // Add this new item
+        { name: 'Projects', href: '#projects', sectionId: 'projects' }
+       
     ];
 
     useEffect(() => {
